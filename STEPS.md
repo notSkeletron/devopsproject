@@ -63,6 +63,7 @@ Optional Enhancements
 
 
 --NEXT STEPS--
+PHASE 3
 install docker
 package app binary into a simple image use "FROM scratch"
 start the service as a docker container (don't run the binary localy, but on the docker container)
