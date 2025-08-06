@@ -46,3 +46,23 @@ Optional Enhancements
 - Monitoring (Prometheus, Grafana)
 - Logging (Loki, ELK)
 - HPA and advanced deployment strategies
+
+
+
+
+
+
+-Created virtual environment (python3 -m venv venv)
+-Run venv with "source venv/bin/activate"
+-pip install pyinstaller fastapi uvicorn
+-Created script app.py
+-Made into a binary using pyinstaller (pyinstaller --onefile app.py)
+
+
+
+
+
+--NEXT STEPS--
+install docker
+package app binary into a simple image use "FROM scratch"
+start the service as a docker container (don't run the binary localy, but on the docker container)
