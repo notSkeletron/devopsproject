@@ -1,4 +1,7 @@
-FROM scratch
+# FROM scratch
+# FROM alpine:3.20
+# FROM debian:bookworm-slim
+FROM ubuntu:23.04
 
-WORKDIR /~/Documents/repos/devopsproject/app/dist/
-CMD [ "app" ]
+COPY app /app
+CMD [ "/app" ]
