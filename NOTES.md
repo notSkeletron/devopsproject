@@ -1,0 +1,1 @@
+to log in to git : ssh-add ~/.ssh/githubpersonal
