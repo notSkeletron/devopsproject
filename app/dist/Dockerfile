@@ -44,6 +44,36 @@
 #COPY --from=builder /app/app.static /app
 #CMD ["/app"]
 
+
+
+#FROM python:3.12-slim AS builder
+#
+#WORKDIR /app
+#
+#RUN apt-get update && apt-get install -y --no-install-recommends \
+#    binutils \
+#    patchelf \
+#    && rm -rf /var/lib/apt/lists/*
+#
+#COPY requirements.txt .
+#RUN pip install --no-cache-dir -r requirements.txt
+#
+#COPY . .
+#
+#RUN pip install --no-cache-dir pyinstaller staticx && \
+#    pyinstaller --onefile app.py && \
+#    staticx dist/app app.static
+#
+## Use a small image with shell for debugging
+#FROM alpine:latest
+#
+#RUN apk add --no-cache bash
+#
+#COPY --from=builder /app/app.static /app
+#CMD ["/app"]
+
+
+
 FROM python:3.12-slim AS builder
 
 WORKDIR /app
@@ -58,14 +88,21 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+# Build the PyInstaller binary
 RUN pip install --no-cache-dir pyinstaller staticx && \
     pyinstaller --onefile app.py && \
     staticx dist/app app.static
 
-# Use a small image with shell for debugging
+# Final stage
 FROM alpine:latest
-
-RUN apk add --no-cache bash
-
+COPY --from=builder /tmp /tmp
 COPY --from=builder /app/app.static /app
-CMD ["/app"]
+
+# Set default port, can be overridden at runtime
+ENV PORT=8000
+
+# Expose the port to Docker
+EXPOSE 8000
+
+# Run the app with the environment variable for port
+CMD ["/app", "--host", "0.0.0.0", "--port", "8000"]
