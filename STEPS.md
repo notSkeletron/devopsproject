@@ -74,3 +74,5 @@ Image built succesfully.
 -----
 local host inside image to connect with localhost outside the image and port forward from the container to the local machine
 First try port forward
+With localhost(127.0.0.1) inside image the app was not working.
+I used 0.0.0.0 as the host both in Dockerfile and the app.py and the app was working even if I was using the url localhost:8000/hello
