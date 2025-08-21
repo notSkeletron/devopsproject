@@ -2,10 +2,7 @@ to log in to git : ssh-add ~/.ssh/githubpersonal
 
 --Jenkins--
 
-docker-compose up -d
+docker-compose up -d (Inside the directory that the docker-compose.yml file exists)
 
-Jenkins login creds:
-    skeletron
-    Chrisantiohos95!
 
 Jenkins URL : http://localhost:9090/
