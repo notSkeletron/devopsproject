@@ -79,3 +79,6 @@ I used 0.0.0.0 as the host both in Dockerfile and the app.py and the app was wor
 
 --Jenkins CI--
 run Jenkins from container to do the CI
+
+running Jenking with docker-compose
+next step : run the app from Jenkins
