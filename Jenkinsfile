@@ -24,6 +24,8 @@ pipeline {
                 echo 'Building Docker image...'
                 script {
                     sh '''
+                    id
+                    whoami
                     docker build -t insidejenkinsbuild .
                     '''
                 }
