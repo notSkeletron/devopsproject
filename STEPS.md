@@ -81,4 +81,14 @@ I used 0.0.0.0 as the host both in Dockerfile and the app.py and the app was wor
 run Jenkins from container to do the CI
 
 running Jenking with docker-compose
-next step : run the app from Jenkins
+next step : run the app from Jenkins 
+
+--Documentation up until now--
+Good Documentation of what I've done so far
+
+--GitLab--(Optional)
+Do the same I did with Jenkins but in GitLab
+
+--Monitoring--
+Prometheus Grafana με containers
+Node exporter να είναι το laptop μου.
