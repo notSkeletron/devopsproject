@@ -26,7 +26,7 @@ pipeline {
                     sh '''
                     id
                     whoami
-                    docker build -t insidejenkinsbuild .
+                    docker build -t $IMAGE_NAME .
                     '''
                 }
             }
