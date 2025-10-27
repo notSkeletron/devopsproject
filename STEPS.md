@@ -63,7 +63,7 @@ Optional Enhancements
 
 
 --NEXT STEPS--
-PHASE 3
+PHASE 3  done
 install docker
 package app binary into a simple image use "FROM scratch"
 start the service as a docker container (don't run the binary localy, but on the docker container)
@@ -77,7 +77,7 @@ First try port forward
 With localhost(127.0.0.1) inside image the app was not working.
 I used 0.0.0.0 as the host both in Dockerfile and the app.py and the app was working even if I was using the url localhost:8000/hello
 
---Jenkins CI--
+--Jenkins CI-- done
 run Jenkins from container to do the CI
 
 running Jenking with docker-compose
