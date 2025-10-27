@@ -23,7 +23,9 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 script {
+                    sh '''
                     docker build -t insideJenkinsBuild .
+                    '''
                 }
             }
         }
