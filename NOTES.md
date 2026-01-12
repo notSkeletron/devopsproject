@@ -4,6 +4,7 @@ to log in to git : ssh-add ~/.ssh/githubpersonal
 
 docker build -t myapp .
 docker run -p 8000:8000 myapp
+docker run -d -p 8000:8000 myapp (to run the container detatched)
 (in ../app/dist to run the app through docker container)
 
 
